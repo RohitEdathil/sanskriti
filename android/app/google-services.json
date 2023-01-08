@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "467420638038",
+    "project_id": "sanskriti-iedc",
+    "storage_bucket": "sanskriti-iedc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467420638038:android:d1f236577f29a010f944f7",
+        "android_client_info": {
+          "package_name": "com.example.sanskriti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "467420638038-39p4v6nfpvg0bof9ptdnmj76and7us29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkzOUw4S8Fd9ZDMQ4UqTwteh3jnSNXZu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "467420638038-39p4v6nfpvg0bof9ptdnmj76and7us29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
