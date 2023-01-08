@@ -70,8 +70,11 @@ class _AuthScreenState extends State<LoginScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Pattern
               const SizedBox(height: 50),
               Center(child: Image.asset('assets/pattern.png', height: 300)),
+
+              // Welcome
               const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.all(20.0),
@@ -92,6 +95,8 @@ class _AuthScreenState extends State<LoginScreen> {
                       "Find the top artists for your event",
                       style: TextStyle(fontSize: 14, color: Colors.white),
                     ),
+
+                    // Inputs
                     const SizedBox(height: 40),
                     CustomInput(controller: _emailCtrlr),
                     const SizedBox(height: 15),

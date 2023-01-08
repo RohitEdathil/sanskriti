@@ -68,6 +68,8 @@ class ArtformScreen extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 20),
+
+          // Description
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Text(
@@ -78,11 +80,15 @@ class ArtformScreen extends StatelessWidget {
                   .copyWith(color: Colors.white.withOpacity(0.8), fontSize: 13),
             ),
           ),
+
+          // Video
           const SectionHeader(
             icon: Icons.live_tv_rounded,
             title: 'Watch',
           ),
           VideoCarousel(id: data['video']),
+
+          // Artists (only if there are any)
           if (data['artists'] != null)
             const SectionHeader(
               icon: Icons.person,

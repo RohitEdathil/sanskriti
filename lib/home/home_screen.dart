@@ -29,10 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
       future: fetchUserData(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
+          // Loading
           return const Scaffold(
             body: Center(child: SpinKitSpinningLines(color: Colors.white)),
           );
         } else {
+          // Separate Dashboards
           if (data!.child('is_artist').value == true) {
             return ArtistDashboard(user: data!);
           } else {

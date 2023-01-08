@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:sanskriti/culture/culture_view.dart';
 import 'package:sanskriti/utils/gradient_image_tile.dart';
-import 'package:sanskriti/utils/image_builder.dart';
 
 class ChooseCultureScreen extends StatefulWidget {
   const ChooseCultureScreen({super.key});

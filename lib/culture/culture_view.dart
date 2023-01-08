@@ -80,11 +80,15 @@ class CultureView extends StatelessWidget {
                   .copyWith(color: Colors.white.withOpacity(0.8), fontSize: 13),
             ),
           ),
+
+          // Videos
           const SectionHeader(
             icon: Icons.live_tv_rounded,
             title: 'Watch',
           ),
           VideoCarousel(id: data.child('video').value as String),
+
+          // Artforms (Only if exists)
           if (data.child('arts').exists)
             const SectionHeader(
               icon: Icons.music_note,

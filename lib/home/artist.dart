@@ -34,10 +34,12 @@ class _ArtistDashboardState extends State<ArtistDashboard> {
         title: const Text('Your Requests'),
         actions: [
           IconButton(
+
+              // Sign out
               onPressed: () {
                 FirebaseAuth.instance.signOut();
-                Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => LoginScreen()));
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => const LoginScreen()));
               },
               icon: const Icon(Icons.power_settings_new))
         ],
@@ -45,12 +47,15 @@ class _ArtistDashboardState extends State<ArtistDashboard> {
       body: FutureBuilder(
           future: fetchUserData(),
           builder: (context, snapshot) {
+            // Loading
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(
                   child: SpinKitSpinningLines(color: Colors.white));
             }
 
             return data.children.isEmpty
+
+                // Empty filler
                 ? Center(
                     child: Padding(
                     padding: const EdgeInsets.all(30.0),
@@ -61,6 +66,7 @@ class _ArtistDashboardState extends State<ArtistDashboard> {
                           color: Colors.white.withOpacity(0.5), fontSize: 30),
                     ),
                   ))
+                // Requests
                 : SingleChildScrollView(
                     child: Column(
                       children: [

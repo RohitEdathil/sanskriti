@@ -56,6 +56,8 @@ class _UserDashboardState extends State<UserDashboard> {
               }
 
               return data!.children.isEmpty
+
+                  // Empty filler
                   ? Center(
                       child: Padding(
                       padding: const EdgeInsets.all(30.0),
@@ -66,6 +68,8 @@ class _UserDashboardState extends State<UserDashboard> {
                             color: Colors.white.withOpacity(0.5), fontSize: 30),
                       ),
                     ))
+
+                  // Requests
                   : SingleChildScrollView(
                       child: Column(
                         children: [
@@ -103,6 +107,7 @@ class RequestCard extends StatefulWidget {
 class _RequestCardState extends State<RequestCard> {
   DataSnapshot? artist;
 
+  // Match  status to color
   Color _getColor(DataSnapshot snap) {
     switch (snap.child('status').value as int) {
       case -1:
@@ -115,6 +120,7 @@ class _RequestCardState extends State<RequestCard> {
     }
   }
 
+  // Match status to message
   String _getMessage(DataSnapshot snap) {
     switch (snap.child('status').value as int) {
       case -1:
@@ -140,12 +146,14 @@ class _RequestCardState extends State<RequestCard> {
         future: _loadData(),
         builder: (context, snap) {
           if (snap.connectionState == ConnectionState.waiting) {
+            // Loading
             return Container(
               height: 200,
               margin: const EdgeInsets.all(30),
               child: const SpinKitSpinningLines(color: Colors.white),
             );
           }
+
           return Container(
             margin: const EdgeInsets.all(30),
             padding: const EdgeInsets.all(20),
@@ -155,6 +163,7 @@ class _RequestCardState extends State<RequestCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Name of artist
                 Text(
                   artist!.child('name').value as String,
                   style: const TextStyle(
@@ -164,17 +173,21 @@ class _RequestCardState extends State<RequestCard> {
                   ),
                 ),
                 const SizedBox(width: 10),
+
+                // Name of Program
                 Text(
                   widget.data.child("programName").value as String,
                   style: const TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 10),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        // Date
                         Row(
                           children: [
                             const Icon(Icons.date_range),
@@ -188,6 +201,8 @@ class _RequestCardState extends State<RequestCard> {
                             )
                           ],
                         ),
+
+                        // Location
                         Row(
                           children: [
                             const Icon(Icons.location_on),

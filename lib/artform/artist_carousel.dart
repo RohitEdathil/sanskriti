@@ -1,6 +1,5 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:sanskriti/user/user_screen.dart';
 import 'package:sanskriti/utils/image_builder.dart';
@@ -48,6 +47,7 @@ class _ArtistCardState extends State<ArtistCard> {
     return FutureBuilder(
         future: getData(),
         builder: (context, snap) {
+          // Loading
           if (snap.connectionState == ConnectionState.waiting) {
             return Container(
                 margin: const EdgeInsets.symmetric(horizontal: 30),
@@ -61,6 +61,7 @@ class _ArtistCardState extends State<ArtistCard> {
           }
 
           return GestureDetector(
+            // Go to user screen
             onTap: () => Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -75,6 +76,7 @@ class _ArtistCardState extends State<ArtistCard> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  // Image
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 15),
                     height: 150,
@@ -100,6 +102,8 @@ class _ArtistCardState extends State<ArtistCard> {
                     ),
                   ),
                   const SizedBox(height: 10),
+
+                  // Name
                   Flexible(
                     child: SizedBox(
                       width: 150,
